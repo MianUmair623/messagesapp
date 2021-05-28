@@ -1,0 +1,34 @@
+<div id="room-id" data-room-id="<%= @room.try(:id)%>"%></div>
+<div id="user-id" data-user-id="<%= current_user.id%>"%></div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3 mt-4">
+      <%= render 'form', room: Room.new%>
+      <hr>
+      <div class="room-chat overflow-auto" >
+        <%= render 'room_chat', room: @room%>
+      </div>
+    </div>      
+    <%if @room.present?%>
+    <div class="col-8 mt-4 back-color pt-3">
+        <div class="chat-room">
+            <div id ="messages" class="overflow-auto">
+              <%@room.messages.each do |message|%>
+              <div class="content-contanier">
+                <div class="message mb-2  <%= 'me' if message.user == current_user%>">
+                  <div class="content ">
+                    <%= render 'messages/message',message: message%>
+                  </div>
+                  <div class="author">
+                    <%=message.user.username%>
+                  </div>
+                </div>
+              </div>
+              <%end%>
+            </div>
+            <%= render 'messages/form', message:Message.new, room: @room%>
+          <%end%>
+        </div>
+    </div>
+  </div>
+</div>

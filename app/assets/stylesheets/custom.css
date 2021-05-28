@@ -1,0 +1,46 @@
+.chat-room{
+	height: 100%;
+	overflow-y: hidden;
+	}
+	.message {
+		display: inline;
+		} 
+	.content {
+	 	background-color: #eeee;
+	 	padding: 8px 16px;
+	 	border-radius: 28px;
+	 	width: 10%;
+
+	 }
+	 
+	 .author{
+	 	font-size: 0.8rem;
+	 	color: white;
+	 	margin-left: 15px;
+	 }
+	.chat-box{
+		position: absolute;
+		bottom: 0;
+		padding: 15px;
+		width: calt(100% -15px);
+		input[type= text]{
+			height: 45px;
+			font-size: 18px;
+			padding: 8px;
+		}
+		.btn{
+			height: 45px;
+		}
+	}
+	.overflow-auto{
+		height: 510px;
+    overflow-y: scroll;
+	}
+	.back-color
+	{
+		background-color: darkslategrey;
+	}
+	.user-name
+	{
+
+	}
